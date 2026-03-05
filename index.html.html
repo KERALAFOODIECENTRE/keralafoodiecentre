@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> KeralaFoodieCentre | Premium Experience</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+body{background:#111;color:white;overflow-x:hidden}
+
+/* LOGO WATERMARK */
+body::before{
+content:"";
+background:url('https://tse1.mm.bing.net/th/id/OIP.N1pg4NbKZ3WrvwN7fBKJ9AHaHa?pid=Api&P=0&h=180') no-repeat center;
+background-size:500px;
+opacity:0.05;
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+z-index:-1;
+}
+
+/* HEADER */
+header{
+background:#e4002b;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.hero h2{font-size:50px;margin-bottom:20px;}
+.hero button{
+padding:15px 30px;
+background:#e4002b;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* MENU */
+.menu{padding:60px 20px;text-align:center}
+.menu-items{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+}
+
+.card{
+background:white;
+color:black;
+width:260px;
+border-radius:10px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{transform:scale(1.05)}
+.card img{width:100%;height:180px;object-fit:cover}
+.card h3{padding:10px}
+
+.qty{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.qty button{
+background:#e4002b;
+border:none;
+color:white;
+padding:5px 10px;
+cursor:pointer;
+}
+
+.card button.add{
+background:#e4002b;
+color:white;
+border:none;
+padding:10px;
+width:90%;
+margin:10px;
+cursor:pointer;
+}
+
+/* CART */
+.cart{
+position:fixed;
+right:-400px;
+top:0;
+width:350px;
+height:100%;
+background:#222;
+padding:20px;
+transition:0.4s;
+overflow-y:auto;
+}
+
+.cart.active{right:0}
+.cart-item{margin-bottom:10px;border-bottom:1px solid #444;padding-bottom:10px}
+
+/* LOGIN MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:white;
+color:black;
+padding:30px;
+border-radius:10px;
+width:300px;
+}
+
+.modal-content input{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+.modal-content button{
+background:#e4002b;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+.hero h2{font-size:30px}
+header{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>✨🌴 Kerala Foodie Centre 🍛🥥✨ </h1>
+<nav>
+<a onclick="scrollToMenu()">Menu</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Authentic Kerala Cuisine </h2>
+<a href="https://wa.me/919946090350" target="_blank" class="order-btn">
+      Order on WhatsApp
+    </a>
+</section>
+
+<section class="menu" id="menu">
+<h2>Popular Items</h2>
+<div class="menu-items">
+
+<div class="menu-items">
+
+<!-- APPAM -->
+<div class="card">
+<img src="https://www.awesomecuisine.com/wp-content/uploads/2023/08/Appam-with-Stew.jpg">
+<h3>Appam </h3> 
+
+<!-- CHICKEN MAPPAS -->
+<div class="card"> 
+<img src="https://i.ytimg.com/vi/_6ZIqbD_pKk/maxresdefault.jpg"> 
+<h3>Chicken Mappas </h3> 
+
+
+<!-- VEG STEW -->
+<div class="card">
+<img src="https://i1.wp.com/www.cookingfromheart.com/wp-content/uploads/2016/11/m_DSC_0065.jpg?resize=1024%2C721">
+<h3>Veg Stew </h3>  
+
+
+<!-- CHICKEN GHEE ROAST -->
+<div class="card">
+<img src="https://images.indianexpress.com/2016/04/ghee-roast-main.jpg?resize=600">
+<h3>Chicken Ghee Roast </h3>
+
+<!-- CHICKEN STEW -->
+<div class="card">
+<img src="https://thecozycook.com/wp-content/uploads/2022/12/Chicken-Stew-f-.jpg">
+<h3>Chicken Stew </h3>
+
+</div>
+</section>
+
+<script>
+function scrollToMenu(){
+document.getElementById("menu").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+<section class="google-reviews">
+  <h2>⭐ Loved Our Food?</h2>
+  <p class="rating">Rated 4.8 on Google</p>
+
+  <div class="review-cards">
+    <div class="review-card">
+      <p>“Felt like having food from back home!”</p>
+      <span>★★★★★</span>
+    </div>
+
+    <div class="review-card">
+      <p>“The Chicken Mappas was outstanding!”</p>
+      <span>★★★★★</span>
+    </div>
+
+    <div class="review-card">
+      <p>“Best authentic Kerala taste in Pune.”</p>
+      <span>★★★★★</span>
+    </div>
+  </div>
+
+  <a href="https://maps.app.goo.gl/diC5NHmSwZ7HFEan8?g_st=ipc" 
+     target="_blank" 
+     class="review-btn">
+     Write a Google Review
+  </a>
+</section>
+
+<style>
+.google-reviews {
+  background: #f5f5dc;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.google-reviews h2 {
+  font-size: 32px;
+  color: #1b5e20;
+}
+
+.rating {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.review-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.review-card {
+  background: black;
+  padding: 20px;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.review-card span {
+  color: #d4af37;
+  font-size: 18px;
+}
+
+.review-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: #4285F4;
+  color: black;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.review-btn:hover {
+  background: #3367D6;
+}
+</style>
+
+<a href="https://maps.app.goo.gl/diC5NHmSwZ7HFEan8?g_st=ipc" 
+   target="_blank" 
+   class="floating-review">
+   ⭐ Review Us
+</a>
+
+<style>
+.floating-review {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4285F4;
+  color: black;
+  padding: 12px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.floating-review:hover {
+  background: #3367D6;
+}
+</style>
+
+<nav class="navbar">
+  <div class="logo">Kerala Foodie Centre</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Authentic Kerala Taste in Pune</h1>
+    <p>Freshly Prepared | Pre-Order Only</p>
+    <a href="https://wa.me/919946090350" target="_blank" class="order-btn">
+      Order on WhatsApp
+    </a>
+  </div>
+</section>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #1b5e20;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://www.siasat.com/wp-content/uploads/2025/09/Onam-Sandhya.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-top: 60px;
+}
+
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.order-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #d4af37;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+</style>
+
+<section class="story" id="story">
+  <div class="story-container">
+    <h2>🌴 Our Story</h2>
+    <p>
+      Kerala Foodie Centre was born from a simple longing — the taste of home.
+      Living in Pune, we missed authentic Kerala flavours like soft appams,
+      rich coconut curries, and spicy naadan dishes.
+    </p>
+
+    <p>
+      What started as cooking for friends and family slowly became a home kitchen
+      built on one promise — freshly prepared food made only after receiving your order.
+    </p>
+
+    <p>
+      Every dish is made with fresh ingredients, traditional spices, and
+      the warmth of a Kerala home.
+    </p>
+  </div>
+</section>
+
+<style>
+.story {
+  background: #f5f5dc;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.story-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.story h2 {
+  color: #1b5e20;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.story p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+</style>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+</style>
+
+<section id="location" style="padding:60px 20px; text-align:center; background:#f5f5dc; color:black;">
+<h2>📍 Our Location</h2>
+
+<iframe 
+src="https://www.google.com/maps?q=Kerala%20Foodie%20Centre%20Pashan%20Pune&output=embed"
+width="100%" 
+height="400"
+style="border:0;"
+loading="lazy">
+</iframe>
+
+</section>
+
+</body>
+</html>
