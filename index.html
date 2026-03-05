@@ -184,6 +184,44 @@ header{flex-direction:column}
 <h2>Popular Items</h2>
 <div class="menu-items">
 
+<div class="spice-bg">
+  <span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span>
+</div>
+
+<style>
+.spice-bg span{
+position:fixed;
+bottom:-50px;
+width:8px;
+height:8px;
+background:#D4AF37;
+border-radius:50%;
+animation:floatSpice 12s linear infinite;
+}
+
+.spice-bg span:nth-child(1){left:10%;animation-duration:10s}
+.spice-bg span:nth-child(2){left:20%;animation-duration:12s}
+.spice-bg span:nth-child(3){left:35%;animation-duration:9s}
+.spice-bg span:nth-child(4){left:50%;animation-duration:14s}
+.spice-bg span:nth-child(5){left:65%;animation-duration:11s}
+.spice-bg span:nth-child(6){left:75%;animation-duration:13s}
+.spice-bg span:nth-child(7){left:85%;animation-duration:10s}
+.spice-bg span:nth-child(8){left:95%;animation-duration:12s}
+
+@keyframes floatSpice{
+0%{transform:translateY(0)}
+100%{transform:translateY(-120vh)}
+}
+</style>
+
+<body>
+<div class="spice-bg">
+<span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span>
+</div>
+</body>
+
 <div class="menu-items">
 
 <!-- APPAM -->
@@ -304,7 +342,7 @@ document.getElementById("menu").scrollIntoView({behavior:"smooth"});
 }
 </style>
 
-<a href="https://maps.app.goo.gl/diC5NHmSwZ7HFEan8?g_st=ipc" 
+<a href="https://www.google.com/maps/place/Kerala+Foodie+Centre+(Home+made+food+%2F+PREORDER+ONLY)/@18.5479854,73.7858488,17z/data=!4m8!3m7!1s0x3bc2bfa16c7c742d:0x7d1288fdb7c0064c!8m2!3d18.5479854!4d73.7884237!9m1!1b1!16s%2Fg%2F11kqyy3j5y?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D" 
    target="_blank" 
    class="floating-review">
    ⭐ Review Us
@@ -474,7 +512,13 @@ style="border:0;"
 loading="lazy">
 </iframe>
 
-</section>
+<style>
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #D4AF37;
+}
+</style>
 
+</section>
 </body>
 </html>
