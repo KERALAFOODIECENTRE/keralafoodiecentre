@@ -3,522 +3,1560 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> KeralaFoodieCentre | Premium Experience</title>
+
+<title>Kerala Foodie Centre | Authentic Kerala Food in Pune</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-body{background:#111;color:white;overflow-x:hidden}
 
-/* LOGO WATERMARK */
-body::before{
-content:"";
-background:url('https://tse1.mm.bing.net/th/id/OIP.N1pg4NbKZ3WrvwN7fBKJ9AHaHa?pid=Api&P=0&h=180') no-repeat center;
-background-size:500px;
-opacity:0.05;
-position:fixed;
-top:0;left:0;width:100%;height:100%;
-z-index:-1;
-}
+/* =========================================
+   GLOBAL
+========================================= */
 
-/* HEADER */
-header{
-background:#e4002b;
-padding:15px 30px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.hero{
-height:90vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-}
-
-.hero h2{font-size:50px;margin-bottom:20px;}
-.hero button{
-padding:15px 30px;
-background:#e4002b;
-border:none;
-color:white;
-border-radius:5px;
-cursor:pointer;
-}
-
-/* MENU */
-.menu{padding:60px 20px;text-align:center}
-.menu-items{
-display:flex;
-flex-wrap:wrap;
-gap:30px;
-justify-content:center;
-}
-
-.card{
-background:white;
-color:black;
-width:260px;
-border-radius:10px;
-overflow:hidden;
-transition:0.3s;
-}
-
-.card:hover{transform:scale(1.05)}
-.card img{width:100%;height:180px;object-fit:cover}
-.card h3{padding:10px}
-
-.qty{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-margin-bottom:10px;
-}
-
-.qty button{
-background:#e4002b;
-border:none;
-color:white;
-padding:5px 10px;
-cursor:pointer;
-}
-
-.card button.add{
-background:#e4002b;
-color:white;
-border:none;
-padding:10px;
-width:90%;
-margin:10px;
-cursor:pointer;
-}
-
-/* CART */
-.cart{
-position:fixed;
-right:-400px;
-top:0;
-width:350px;
-height:100%;
-background:#222;
-padding:20px;
-transition:0.4s;
-overflow-y:auto;
-}
-
-.cart.active{right:0}
-.cart-item{margin-bottom:10px;border-bottom:1px solid #444;padding-bottom:10px}
-
-/* LOGIN MODAL */
-.modal{
-display:none;
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:rgba(0,0,0,0.8);
-justify-content:center;
-align-items:center;
-}
-
-.modal-content{
-background:white;
-color:black;
-padding:30px;
-border-radius:10px;
-width:300px;
-}
-
-.modal-content input{
-width:100%;
-padding:10px;
-margin:10px 0;
-}
-
-.modal-content button{
-background:#e4002b;
-color:white;
-border:none;
-padding:10px;
-width:100%;
-cursor:pointer;
-}
-
-@media(max-width:768px){
-.hero h2{font-size:30px}
-header{flex-direction:column}
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>✨🌴 Kerala Foodie Centre 🍛🥥✨ </h1>
-<nav>
-<a onclick="scrollToMenu()">Menu</a>
-</nav>
-</header>
-
-<section class="hero">
-<h2>Authentic Kerala Cuisine </h2>
-<a href="https://wa.me/919946090350" target="_blank" class="order-btn">
-      Order on WhatsApp
-    </a>
-</section>
-
-<section class="menu" id="menu">
-<h2>Popular Items</h2>
-<div class="menu-items">
-
-<div class="spice-bg">
-  <span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span>
-</div>
-
-<style>
-.spice-bg span{
-position:fixed;
-bottom:-50px;
-width:8px;
-height:8px;
-background:#D4AF37;
-border-radius:50%;
-animation:floatSpice 12s linear infinite;
-}
-
-.spice-bg span:nth-child(1){left:10%;animation-duration:10s}
-.spice-bg span:nth-child(2){left:20%;animation-duration:12s}
-.spice-bg span:nth-child(3){left:35%;animation-duration:9s}
-.spice-bg span:nth-child(4){left:50%;animation-duration:14s}
-.spice-bg span:nth-child(5){left:65%;animation-duration:11s}
-.spice-bg span:nth-child(6){left:75%;animation-duration:13s}
-.spice-bg span:nth-child(7){left:85%;animation-duration:10s}
-.spice-bg span:nth-child(8){left:95%;animation-duration:12s}
-
-@keyframes floatSpice{
-0%{transform:translateY(0)}
-100%{transform:translateY(-120vh)}
-}
-</style>
-
-<body>
-<div class="spice-bg">
-<span></span><span></span><span></span><span></span>
-<span></span><span></span><span></span><span></span>
-</div>
-</body>
-
-<div class="menu-items">
-
-<!-- APPAM -->
-<div class="card">
-<img src="https://www.awesomecuisine.com/wp-content/uploads/2023/08/Appam-with-Stew.jpg">
-<h3>Appam </h3> 
-
-<!-- CHICKEN MAPPAS -->
-<div class="card"> 
-<img src="https://i.ytimg.com/vi/_6ZIqbD_pKk/maxresdefault.jpg"> 
-<h3>Chicken Mappas </h3> 
-
-
-<!-- VEG STEW -->
-<div class="card">
-<img src="https://i1.wp.com/www.cookingfromheart.com/wp-content/uploads/2016/11/m_DSC_0065.jpg?resize=1024%2C721">
-<h3>Veg Stew </h3>  
-
-
-<!-- CHICKEN GHEE ROAST -->
-<div class="card">
-<img src="https://images.indianexpress.com/2016/04/ghee-roast-main.jpg?resize=600">
-<h3>Chicken Ghee Roast </h3>
-
-<!-- CHICKEN STEW -->
-<div class="card">
-<img src="https://thecozycook.com/wp-content/uploads/2022/12/Chicken-Stew-f-.jpg">
-<h3>Chicken Stew </h3>
-
-</div>
-</section>
-
-<script>
-function scrollToMenu(){
-document.getElementById("menu").scrollIntoView({behavior:"smooth"});
-}
-</script>
-
-<section class="google-reviews">
-  <h2>⭐ Loved Our Food?</h2>
-  <p class="rating">Rated 4.8 on Google</p>
-
-  <div class="review-cards">
-    <div class="review-card">
-      <p>“Felt like having food from back home!”</p>
-      <span>★★★★★</span>
-    </div>
-
-    <div class="review-card">
-      <p>“The Chicken Mappas was outstanding!”</p>
-      <span>★★★★★</span>
-    </div>
-
-    <div class="review-card">
-      <p>“Best authentic Kerala taste in Pune.”</p>
-      <span>★★★★★</span>
-    </div>
-  </div>
-
-  <a href="https://maps.app.goo.gl/diC5NHmSwZ7HFEan8?g_st=ipc" 
-     target="_blank" 
-     class="review-btn">
-     Write a Google Review
-  </a>
-</section>
-
-<style>
-.google-reviews {
-  background: #f5f5dc;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.google-reviews h2 {
-  font-size: 32px;
-  color: #1b5e20;
-}
-
-.rating {
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: #555;
-}
-
-.review-cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.review-card {
-  background: black;
-  padding: 20px;
-  width: 280px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.review-card span {
-  color: #d4af37;
-  font-size: 18px;
-}
-
-.review-btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 12px 25px;
-  background: #4285F4;
-  color: black;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.review-btn:hover {
-  background: #3367D6;
-}
-</style>
-
-<a href="https://www.google.com/maps/place/Kerala+Foodie+Centre+(Home+made+food+%2F+PREORDER+ONLY)/@18.5479854,73.7858488,17z/data=!4m8!3m7!1s0x3bc2bfa16c7c742d:0x7d1288fdb7c0064c!8m2!3d18.5479854!4d73.7884237!9m1!1b1!16s%2Fg%2F11kqyy3j5y?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D" 
-   target="_blank" 
-   class="floating-review">
-   ⭐ Review Us
-</a>
-
-<style>
-.floating-review {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #4285F4;
-  color: black;
-  padding: 12px 18px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.floating-review:hover {
-  background: #3367D6;
-}
-</style>
-
-<nav class="navbar">
-  <div class="logo">Kerala Foodie Centre</div>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<section class="hero">
-  <div class="hero-text">
-    <h1>Authentic Kerala Taste in Pune</h1>
-    <p>Freshly Prepared | Pre-Order Only</p>
-    <a href="https://wa.me/919946090350" target="_blank" class="order-btn">
-      Order on WhatsApp
-    </a>
-  </div>
-</section>
-
-<style>
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: #1b5e20;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+body {
+  background: #111;
   color: white;
+  overflow-x: hidden;
+  padding-left: 70px;
+}
+
+/* Logo watermark */
+
+body::before {
+  content: "";
+  background: url('https://tse1.mm.bing.net/th/id/OIP.N1pg4NbKZ3WrvwN7fBKJ9AHaHa?pid=Api&P=0&h=180')
+  no-repeat center;
+  background-size: 500px;
+  opacity: 0.05;
   position: fixed;
-  width: 100%;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
 
-.nav-links a {
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-}
+/* =========================================
+   LEFT SIDE NAVIGATION
+========================================= */
 
-/* Hero Section */
-.hero {
-  background: url('https://www.siasat.com/wp-content/uploads/2025/09/Onam-Sandhya.jpg') center/cover no-repeat;
+.side-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 70px;
   height: 100vh;
+
+  background: rgba(15, 15, 15, 0.98);
+
+  border-right: 1px solid rgba(212, 175, 55, 0.35);
+
+  z-index: 9999;
+
+  transition: width 0.35s ease;
+
+  overflow: hidden;
+
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.side-nav:hover {
+  width: 240px;
+}
+
+.nav-toggle {
+  height: 70px;
+
   display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+
+  color: #D4AF37;
+
+  cursor: pointer;
+
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.nav-brand {
+  padding: 20px;
+
+  color: #D4AF37;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  transition: opacity 0.25s;
+}
+
+.side-nav:hover .nav-brand {
+  opacity: 1;
+}
+
+.side-nav-links {
+  padding-top: 10px;
+}
+
+.side-nav-links a {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  height: 55px;
+
+  padding: 0 20px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  white-space: nowrap;
+
+  transition: 0.3s;
+}
+
+.side-nav-links a:hover {
+  background: #e4002b;
+  color: white;
+
+  padding-left: 25px;
+}
+
+.side-nav-links a span {
+  opacity: 0;
+
+  transition: opacity 0.2s;
+}
+
+.side-nav:hover .side-nav-links a span {
+  opacity: 1;
+}
+
+/* WhatsApp navigation button */
+
+.nav-order {
+  margin: 25px 10px;
+
+  border-radius: 6px;
+
+  background: #D4AF37;
+
+  color: #111 !important;
+}
+
+.nav-order:hover {
+  background: #e4002b !important;
+  color: white !important;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.68)
+    ),
+    url('https://www.siasat.com/wp-content/uploads/2025/09/Onam-Sandhya.jpg')
+    center / cover no-repeat;
+
+  display: flex;
+
   justify-content: center;
   align-items: center;
+
   text-align: center;
-  color: white;
-  padding-top: 60px;
+
+  padding: 40px 20px;
 }
 
 .hero-text {
-  background: rgba(0,0,0,0.5);
-  padding: 30px;
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.62);
+
+  padding: 40px;
+
+  border-radius: 12px;
+
+  max-width: 750px;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  font-size: 48px;
+
+  margin-bottom: 15px;
+}
+
+.hero-subtitle {
+  font-size: 21px;
+
+  color: #f5f5dc;
+
+  margin-bottom: 20px;
+}
+
+.preorder-message {
+  margin: 20px 0;
+
+  padding: 12px 18px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.4);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.4);
+}
+
+.preorder-message strong {
+  display: block;
+
+  font-size: 17px;
+}
+
+.preorder-message span {
+  display: block;
+
+  font-size: 14px;
+
+  margin-top: 5px;
+
+  opacity: 0.8;
 }
 
 .order-btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #d4af37;
-  color: white;
+
+  margin-top: 15px;
+
+  padding: 14px 28px;
+
+  background: #D4AF37;
+
+  color: #111;
+
   text-decoration: none;
+
   border-radius: 6px;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background: #e4002b;
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.menu {
+  padding: 80px 30px;
+
+  text-align: center;
+
+  background: #111;
+
+  position: relative;
+}
+
+.menu h2 {
+  font-size: 36px;
+
+  color: #D4AF37;
+
+  margin-bottom: 40px;
+}
+
+.menu-items {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 30px;
+
+  justify-content: center;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.card {
+  background: white;
+
+  color: black;
+
+  width: 260px;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  transition: 0.3s;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,0.4);
+}
+
+.card:hover {
+  transform:
+    translateY(-8px)
+    scale(1.03);
+
+  box-shadow:
+    0 0 20px #D4AF37;
+}
+
+.card img {
+  width: 100%;
+
+  height: 180px;
+
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 18px 10px;
+
+  font-size: 19px;
+}
+
+
+/* =========================================
+   Q&A / FAQ
+========================================= */
+
+.qa-section {
+  background: #111;
+
+  padding: 80px 20px;
+
+  text-align: center;
+}
+
+.qa-container {
+  max-width: 850px;
+
+  margin: auto;
+}
+
+.qa-section h2 {
+  color: #D4AF37;
+
+  font-size: 36px;
+
+  margin-bottom: 12px;
+}
+
+.qa-subtitle {
+  color: #ccc;
+
+  font-size: 16px;
+
+  margin-bottom: 35px;
+}
+
+.faq {
+  text-align: left;
+}
+
+.faq-item {
+  background: #1c1c1c;
+
+  border:
+    1px solid rgba(212,175,55,0.25);
+
+  border-radius: 8px;
+
+  margin-bottom: 12px;
+
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+
+  padding: 20px;
+
+  background: transparent;
+
+  color: white;
+
+  border: none;
+
+  outline: none;
+
+  text-align: left;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.faq-question:hover {
+  color: #D4AF37;
+}
+
+.faq-question span {
+  color: #D4AF37;
+
+  font-size: 25px;
+
+  transition:
+    transform 0.3s;
+}
+
+.faq-answer {
+  max-height: 0;
+
+  overflow: hidden;
+
+  transition:
+    max-height 0.35s ease;
+
+  background: #151515;
+}
+
+.faq-answer p {
+  padding: 0 20px 20px;
+
+  color: #ccc;
+
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+
+.faq-item.active
+.faq-question span {
+  transform: rotate(45deg);
+}
+
+.faq-whatsapp {
+  display: inline-block;
+
+  margin: 0 20px 20px;
+
+  padding: 11px 20px;
+
+  background: #25D366;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
   font-weight: bold;
 }
-</style>
 
-<section class="story" id="story">
-  <div class="story-container">
-    <h2>🌴 Our Story</h2>
-    <p>
-      Kerala Foodie Centre was born from a simple longing — the taste of home.
-      Living in Pune, we missed authentic Kerala flavours like soft appams,
-      rich coconut curries, and spicy naadan dishes.
-    </p>
 
-    <p>
-      What started as cooking for friends and family slowly became a home kitchen
-      built on one promise — freshly prepared food made only after receiving your order.
-    </p>
+/* =========================================
+   OUR STORY
+========================================= */
 
-    <p>
-      Every dish is made with fresh ingredients, traditional spices, and
-      the warmth of a Kerala home.
-    </p>
-  </div>
-</section>
-
-<style>
 .story {
   background: #f5f5dc;
-  padding: 60px 20px;
+
+  padding: 80px 20px;
+
   text-align: center;
+
+  color: #333;
 }
 
 .story-container {
   max-width: 800px;
+
   margin: auto;
 }
 
 .story h2 {
   color: #1b5e20;
-  font-size: 32px;
-  margin-bottom: 20px;
+
+  font-size: 36px;
+
+  margin-bottom: 25px;
 }
 
 .story p {
   font-size: 18px;
-  line-height: 1.6;
+
+  line-height: 1.7;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================================
+   REVIEWS
+========================================= */
+
+.google-reviews {
+  background: #f5f5dc;
+
+  padding: 80px 20px;
+
+  text-align: center;
+
   color: #333;
 }
-</style>
 
-<style>
-html {
-  scroll-behavior: smooth;
+.google-reviews h2 {
+  font-size: 34px;
+
+  color: #1b5e20;
+}
+
+.rating {
+  font-size: 18px;
+
+  margin: 15px 0 35px;
+
+  color: #555;
+}
+
+.review-cards {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.review-card {
+  background: #111;
+
+  color: white;
+
+  padding: 25px;
+
+  width: 280px;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 4px 15px rgba(0,0,0,0.25);
+}
+
+.review-card p {
+  margin-bottom: 15px;
+
+  line-height: 1.5;
+}
+
+.review-card span {
+  color: #D4AF37;
+
+  font-size: 18px;
+}
+
+.review-btn {
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding: 13px 25px;
+
+  background: #4285F4;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.review-btn:hover {
+  background: #3367D6;
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+#location {
+  padding: 80px 20px;
+
+  text-align: center;
+
+  background: #f5f5dc;
+
+  color: black;
+}
+
+#location h2 {
+  color: #1b5e20;
+
+  font-size: 34px;
+
+  margin-bottom: 30px;
+}
+
+.map-container {
+  max-width: 1000px;
+
+  margin: auto;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,0.25);
+}
+
+.map-container iframe {
+  width: 100%;
+
+  height: 400px;
+
+  border: 0;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+  background: #111;
+
+  padding: 70px 20px;
+
+  text-align: center;
+}
+
+.contact h2 {
+  color: #D4AF37;
+
+  font-size: 34px;
+
+  margin-bottom: 15px;
+}
+
+.contact p {
+  margin: 10px 0;
+
+  color: #ddd;
+}
+
+.contact-whatsapp {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 13px 25px;
+
+  background: #25D366;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.contact-whatsapp:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FLOATING REVIEW BUTTON
+========================================= */
+
+.floating-review {
+  position: fixed;
+
+  bottom: 20px;
+  right: 20px;
+
+  background: #4285F4;
+
+  color: white;
+
+  padding: 12px 18px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.3);
+
+  z-index: 5000;
+
+  transition: 0.3s;
+}
+
+.floating-review:hover {
+  background: #3367D6;
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  background: #080808;
+
+  padding: 30px 20px;
+
+  text-align: center;
+
+  color: #aaa;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px) {
+
+  body {
+    padding-left: 60px;
+  }
+
+  .side-nav {
+    width: 60px;
+  }
+
+  .side-nav:hover {
+    width: 220px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+  }
+
+  .hero-text {
+    padding: 25px 18px;
+  }
+
+  .menu {
+    padding: 60px 15px;
+  }
+
+  .card {
+    width: 90%;
+
+    max-width: 320px;
+  }
+
+  .qa-section {
+    padding: 60px 15px;
+  }
+
+  .qa-section h2 {
+    font-size: 29px;
+  }
+
+  .faq-question {
+    font-size: 15px;
+
+    padding: 17px;
+  }
+
+  .floating-review {
+    bottom: 15px;
+
+    right: 15px;
+
+    padding: 10px 14px;
+
+    font-size: 13px;
+  }
+
 }
 
 </style>
+</head>
 
-<section id="location" style="padding:60px 20px; text-align:center; background:#f5f5dc; color:black;">
-<h2>📍 Our Location</h2>
 
-<iframe 
-src="https://www.google.com/maps?q=Kerala%20Foodie%20Centre%20Pashan%20Pune&output=embed"
-width="100%" 
-height="400"
-style="border:0;"
-loading="lazy">
-</iframe>
+<body>
 
-<style>
-.card:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px #D4AF37;
-}
-</style>
+
+<!-- =========================================
+     LEFT SIDE NAVIGATION
+========================================= -->
+
+<div class="side-nav">
+
+  <div class="nav-toggle">
+    ☰
+  </div>
+
+  <div class="nav-brand">
+    🌴 Kerala Foodie Centre
+  </div>
+
+  <div class="side-nav-links">
+
+    <a href="#home">
+      🏠
+      <span>Home</span>
+    </a>
+
+    <a href="#menu">
+      🍛
+      <span>Menu</span>
+    </a>
+
+    <a href="#qa">
+      ❓
+      <span>Q&amp;A</span>
+    </a>
+
+    <a href="#story">
+      🌴
+      <span>Our Story</span>
+    </a>
+
+    <a href="#reviews">
+      ⭐
+      <span>Reviews</span>
+    </a>
+
+    <a href="#location">
+      📍
+      <span>Location</span>
+    </a>
+
+    <a href="#contact">
+      📞
+      <span>Contact</span>
+    </a>
+
+    <a
+      href="https://wa.me/919946090350"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="nav-order">
+
+      💬
+      <span>Order on WhatsApp</span>
+
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     HOME / HERO
+========================================= -->
+
+<section
+  class="hero"
+  id="home">
+
+  <div class="hero-text">
+
+    <h1>
+      Authentic Kerala Taste in Pune
+    </h1>
+
+    <p class="hero-subtitle">
+      Homemade Kerala food, prepared fresh with traditional flavours.
+    </p>
+
+    <div class="preorder-message">
+
+      <strong>
+        Preorder 1–2 days in advance
+      </strong>
+
+      <span>
+        Freshly prepared with care, just for you
+      </span>
+
+    </div>
+
+    <a
+      href="https://wa.me/919946090350"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="order-btn">
+
+      Order on WhatsApp
+
+    </a>
+
+  </div>
 
 </section>
+
+
+<!-- =========================================
+     MENU
+========================================= -->
+
+<section
+  class="menu"
+  id="menu">
+
+  <h2>
+    🍛 Popular Items
+  </h2>
+
+  <div class="spice-bg">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </div>
+
+  <div class="menu-items">
+
+
+    <!-- APPAM -->
+
+    <div class="card">
+
+      <img
+        src="https://www.awesomecuisine.com/wp-content/uploads/2023/08/Appam-with-Stew.jpg"
+        alt="Kerala Appam">
+
+      <h3>
+        Appam
+      </h3>
+
+    </div>
+
+
+    <!-- CHICKEN MAPPAS -->
+
+    <div class="card">
+
+      <img
+        src="https://i.ytimg.com/vi/_6ZIqbD_pKk/maxresdefault.jpg"
+        alt="Chicken Mappas">
+
+      <h3>
+        Chicken Mappas
+      </h3>
+
+    </div>
+
+
+    <!-- VEG STEW -->
+
+    <div class="card">
+
+      <img
+        src="https://i1.wp.com/www.cookingfromheart.com/wp-content/uploads/2016/11/m_DSC_0065.jpg?resize=1024%2C721"
+        alt="Kerala Vegetable Stew">
+
+      <h3>
+        Veg Stew
+      </h3>
+
+    </div>
+
+
+    <!-- CHICKEN GHEE ROAST -->
+
+    <div class="card">
+
+      <img
+        src="https://images.indianexpress.com/2016/04/ghee-roast-main.jpg?resize=600"
+        alt="Chicken Ghee Roast">
+
+      <h3>
+        Chicken Ghee Roast
+      </h3>
+
+    </div>
+
+
+    <!-- CHICKEN STEW -->
+
+    <div class="card">
+
+      <img
+        src="https://thecozycook.com/wp-content/uploads/2022/12/Chicken-Stew-f-.jpg"
+        alt="Kerala Chicken Stew">
+
+      <h3>
+        Chicken Stew
+      </h3>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     Q&A / FREQUENTLY ASKED QUESTIONS
+========================================= -->
+
+<section
+  class="qa-section"
+  id="qa">
+
+  <div class="qa-container">
+
+    <h2>
+      ❓ Frequently Asked Questions
+    </h2>
+
+    <p class="qa-subtitle">
+      Everything you need to know before placing your order.
+    </p>
+
+
+    <div class="faq">
+
+
+      <!-- QUESTION 1 -->
+
+      <div class="faq-item">
+
+        <button
+          class="faq-question"
+          type="button">
+
+          Do you accept walk-in orders?
+
+          <span>+</span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            We are a home kitchen and operate on a preorder basis.
+            Walk-in orders are not available. We recommend placing
+            your order 1–2 days in advance.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUESTION 2 -->
+
+      <div class="faq-item">
+
+        <button
+          class="faq-question"
+          type="button">
+
+          How much in advance should I order?
+
+          <span>+</span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            Most orders should be placed 1–2 days in advance.
+            This allows us to purchase fresh ingredients and prepare
+            your food specially for your order.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUESTION 3 -->
+
+      <div class="faq-item">
+
+        <button
+          class="faq-question"
+          type="button">
+
+          Do you provide delivery?
+
+          <span>+</span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            Yes, delivery can be arranged. Delivery charges are
+            applicable at actuals and are paid by the customer.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUESTION 4 -->
+
+      <div class="faq-item">
+
+        <button
+          class="faq-question"
+          type="button">
+
+          Is there a minimum order?
+
+          <span>+</span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            There is generally no minimum order requirement.
+            However, some items such as cutlets may have a minimum
+            quantity.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUESTION 5 -->
+
+      <div class="faq-item">
+
+        <button
+          class="faq-question"
+          type="button">
+
+          Do you cater for parties and events?
+
+          <span>+</span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            Yes! We accept larger orders for parties, gatherings,
+            celebrations and corporate events. Please contact us
+            in advance so we can plan your order.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUESTION 6 -->
+
+      <div class="faq-item">
+
+        <button
+          class="faq-question"
+          type="button">
+
+          Do you offer Kerala Sadhya?
+
+          <span>+</span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            Yes. Kerala Sadhya is available on a preorder basis.
+            Please contact us in advance for availability and pricing.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUESTION 7 -->
+
+      <div class="faq-item">
+
+        <button
+          class="faq-question"
+          type="button">
+
+          Do you have a daily or weekly menu?
+
+          <span>+</span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            We don't operate like a daily meal service or mess.
+            Our dishes are prepared based on preorders and
+            availability.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUESTION 8 -->
+
+      <div class="faq-item">
+
+        <button
+          class="faq-question"
+          type="button">
+
+          How do I place an order?
+
+          <span>+</span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            The easiest way is to contact us on WhatsApp.
+            We'll confirm the availability, quantity and price
+            before preparing your order.
+          </p>
+
+          <a
+            href="https://wa.me/919946090350"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="faq-whatsapp">
+
+            💬 Order on WhatsApp
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     OUR STORY
+========================================= -->
+
+<section
+  class="story"
+  id="story">
+
+  <div class="story-container">
+
+    <h2>
+      🌴 Our Story
+    </h2>
+
+    <p>
+      Kerala Foodie Centre was born from a simple longing —
+      the taste of home.
+    </p>
+
+    <p>
+      Living in Pune, we missed authentic Kerala flavours like
+      soft appams, rich coconut curries, and spicy naadan dishes.
+    </p>
+
+    <p>
+      What started as cooking for friends and family slowly became
+      a home kitchen built on one promise — freshly prepared food
+      made only after receiving your order.
+    </p>
+
+    <p>
+      Every dish is made with fresh ingredients, traditional spices,
+      and the warmth of a Kerala home.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     GOOGLE REVIEWS
+========================================= -->
+
+<section
+  class="google-reviews"
+  id="reviews">
+
+  <h2>
+    ⭐ Loved Our Food?
+  </h2>
+
+  <p class="rating">
+    Rated 4.8 on Google
+  </p>
+
+
+  <div class="review-cards">
+
+
+    <div class="review-card">
+
+      <p>
+        “Felt like having food from back home!”
+      </p>
+
+      <span>
+        ★★★★★
+      </span>
+
+    </div>
+
+
+    <div class="review-card">
+
+      <p>
+        “The Chicken Mappas was outstanding!”
+      </p>
+
+      <span>
+        ★★★★★
+      </span>
+
+    </div>
+
+
+    <div class="review-card">
+
+      <p>
+        “Best authentic Kerala taste in Pune.”
+      </p>
+
+      <span>
+        ★★★★★
+      </span>
+
+    </div>
+
+
+  </div>
+
+
+  <a
+    href="https://maps.app.goo.gl/diC5NHmSw7ZHFEan8?g_st=ipc"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="review-btn">
+
+    Write a Google Review
+
+  </a>
+
+</section>
+
+
+<!-- =========================================
+     LOCATION
+========================================= -->
+
+<section
+  id="location">
+
+  <h2>
+    📍 Our Location
+  </h2>
+
+  <div class="map-container">
+
+    <iframe
+      src="https://www.google.com/maps?q=Kerala%20Foodie%20Centre%20Pashan%20Pune&output=embed"
+      loading="lazy"
+      title="Kerala Foodie Centre Location">
+    </iframe>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section
+  class="contact"
+  id="contact">
+
+  <h2>
+    💬 Get in Touch
+  </h2>
+
+  <p>
+    Authentic homemade Kerala food in Pune
+  </p>
+
+  <p>
+    Preorder 1–2 days in advance
+  </p>
+
+  <a
+    href="https://wa.me/919946090350"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contact-whatsapp">
+
+    WhatsApp Us
+
+  </a>
+
+</section>
+
+
+<!-- =========================================
+     FLOATING GOOGLE REVIEW BUTTON
+========================================= -->
+
+<a
+  href="https://www.google.com/maps/place/Kerala+Foodie+Centre+(Home+made+food+%2F+PREORDER+ONLY)/@18.5479854,73.7858488,17z/data=!4m8!3m7!1s0x3bc2bfa16c7c742d:0x7d1288fdb7c0064c!8m2!3d18.5479854!4d73.7884237!9m1!1b1!16s%2Fg%2F11kqyy3j5y?entry=ttu"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="floating-review">
+
+  ⭐ Review Us
+
+</a>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+  © 2026 Kerala Foodie Centre
+  <br>
+  Homemade Kerala Food • Pune
+
+</footer>
+
+
+<!-- =========================================
+     FAQ JAVASCRIPT
+========================================= -->
+
+<script>
+
+const faqQuestions =
+  document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(function(question) {
+
+  question.addEventListener("click", function() {
+
+    const currentItem =
+      question.parentElement;
+
+    document
+      .querySelectorAll(".faq-item")
+      .forEach(function(item) {
+
+        if (item !== currentItem) {
+
+          item.classList.remove("active");
+
+        }
+
+      });
+
+    currentItem.classList.toggle("active");
+
+  });
+
+});
+
+</script>
+
+
 </body>
 </html>
